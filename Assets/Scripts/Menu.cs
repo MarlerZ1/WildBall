@@ -18,4 +18,5 @@ public class Menu : MonoBehaviour
         #endif
         Application.Quit();
     }
+
 }
