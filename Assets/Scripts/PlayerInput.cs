@@ -17,10 +17,7 @@ public class PlayerInput : MonoBehaviour
     {
         _controls = new Controls();
         _rb = GetComponent<Rigidbody>();
-
-        
     }
-
 
     private void FixedUpdate()
     {
@@ -30,7 +27,7 @@ public class PlayerInput : MonoBehaviour
     private void Move()
     {
         Vector2 moveInput = _controls.Move.Moving.ReadValue<Vector2>();
-        _rb.AddForce(new Vector3(moveInput.x * speed, 0, moveInput.y * speed));
+        _rb.AddForce(new Vector3(moveInput.x, 0, moveInput.y).normalized * speed);
     }
 
 
