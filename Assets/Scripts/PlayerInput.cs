@@ -15,7 +15,7 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        _controls = new Controls();
+        _controls = ControlsSingletone.GetControls();
         _rb = GetComponent<Rigidbody>();
     }
 

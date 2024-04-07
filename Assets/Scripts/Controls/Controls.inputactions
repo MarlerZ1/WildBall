@@ -72,6 +72,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Interaction",
+            "id": "03f15b70-d14c-494b-8264-778284b93f8d",
+            "actions": [
+                {
+                    "name": "OpenDoor",
+                    "type": "Button",
+                    "id": "97374865-fd0e-4336-86fd-0a66626576e8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "aac796f3-985e-4dc6-bcb5-cc0144294c4f",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "OpenDoor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
