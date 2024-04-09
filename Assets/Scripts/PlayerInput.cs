@@ -30,7 +30,6 @@ public class PlayerInput : MonoBehaviour
         if (_isGrounded)
         {
             _rb.AddForce(Vector3.up * jumpForce);
-            _isGrounded = false;
         }
     }
 
@@ -45,7 +44,7 @@ public class PlayerInput : MonoBehaviour
         _rb.AddForce(new Vector3(moveInput.x, 0, moveInput.y).normalized * speed);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
