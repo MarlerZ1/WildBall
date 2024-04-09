@@ -18,7 +18,10 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         _controls = ControlsSingletone.GetControls();
-        _controls.Move.Jump.performed += context => Jump();
+    }
+
+    private void Start()
+    {
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -62,9 +65,11 @@ public class PlayerInput : MonoBehaviour
     private void OnEnable()
     {
         _controls.Enable();
+        _controls.Move.Jump.performed += context => Jump();
     }
     private void OnDisable()
     {
+        _controls.Move.Jump.performed -= context => Jump();
         _controls.Disable();
     }
 }
