@@ -71,4 +71,9 @@ public class PlayerInput : MonoBehaviour
         _controls.Move.Jump.performed -= context => Jump();
         _controls.Disable();
     }
+
+    private void OnDestroy()
+    {
+        ControlsSingletone.ResetControls();
+    }
 }

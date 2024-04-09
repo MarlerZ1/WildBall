@@ -6,6 +6,11 @@ public class ControlsSingletone
 {
     static private Controls _controls = null;
 
+    static public void ResetControls()
+    { 
+        _controls = null;
+    }
+
     static public Controls GetControls()
     {
         if (_controls == null)

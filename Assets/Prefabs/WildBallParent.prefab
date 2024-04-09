@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b9eebd6eb93fba946b47089c8f4dd4f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpForce: 0
 --- !u!114 &8592233557024840886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,3 +217,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 2166862880964163649, guid: 6ce91be3aef806340a905ee7e714830c, type: 3}
   killingObjectTag: Enemy
+  gameOverMenu: {fileID: 0}
