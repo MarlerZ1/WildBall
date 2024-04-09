@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 275060003}
   m_Layer: 6
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -742,6 +742,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4889955297806638036, guid: 274d5a2da60549740acca4d72db13042, type: 3}
+      propertyPath: jumpForce
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 5411039670370304118, guid: 274d5a2da60549740acca4d72db13042, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1250,7 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 388339061677667541, guid: 169dee57ae6337045a153e2f0797f265, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.15
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 388339061677667541, guid: 169dee57ae6337045a153e2f0797f265, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1284,15 +1288,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4251176067886789459, guid: 169dee57ae6337045a153e2f0797f265, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4590426404804720861, guid: 169dee57ae6337045a153e2f0797f265, type: 3}
       propertyPath: m_Name
       value: DeathByFall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590426404804720861, guid: 169dee57ae6337045a153e2f0797f265, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7673089408950986173, guid: 169dee57ae6337045a153e2f0797f265, type: 3}
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 7159983318957213746}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7673089408950986173, guid: 169dee57ae6337045a153e2f0797f265, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

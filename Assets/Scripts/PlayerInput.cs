@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,15 +9,26 @@ public class PlayerInput : MonoBehaviour
 {
 
     [SerializeField, Range(0, 100)] private float speed = 2.0f;
-    
+    [SerializeField] private float jumpForce;
 
     private Controls _controls;
     private Rigidbody _rb;
+    private bool _isGrounded = true;
     // Start is called before the first frame update
     private void Awake()
     {
         _controls = ControlsSingletone.GetControls();
+        _controls.Move.Jump.performed += context => Jump();
         _rb = GetComponent<Rigidbody>();
+    }
+
+    private void Jump()
+    {
+        if (_isGrounded)
+        {
+            _rb.AddForce(Vector3.up * jumpForce);
+            _isGrounded = false;
+        }
     }
 
     private void FixedUpdate()
@@ -30,7 +42,22 @@ public class PlayerInput : MonoBehaviour
         _rb.AddForce(new Vector3(moveInput.x, 0, moveInput.y).normalized * speed);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            _isGrounded = true;
+        }
+    }
 
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            _isGrounded = false;
+        }
+    }
 
     private void OnEnable()
     {
