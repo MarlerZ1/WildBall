@@ -5,6 +5,7 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class GameOverTrigger : MonoBehaviour
 {
+   //This class is depricated. Used to complete the skillbox task
     [SerializeField] private GameOverMenu gameOverMenu;
     private void OnTriggerEnter(Collider other)
     {

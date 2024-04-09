@@ -7,9 +7,15 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverMenu;
-
+    [SerializeField] private float timeWait;
     public void GameOver()
     {
+        StartCoroutine(IEGameOver());
+    }
+
+    private IEnumerator IEGameOver()
+    {
+        yield return new WaitForSecondsRealtime(timeWait);
         Time.timeScale = 0;
         gameOverMenu.SetActive(true);
     }
